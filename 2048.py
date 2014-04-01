@@ -7,6 +7,13 @@ def print_board(Board):
 	print
 
 def judge_dir(drt):
+	#if drt == "some direction":
+	#	init two pointers, 
+	#	the space pointer point to the first zero position
+	#	the second potinter equal to the space pointer
+	#	move sec ptr to the first value positon
+	#	move value to space, space+1
+	#	sec move to the next value position
 	if drt == "w":
 		for col in range (4):
 			for row in range(4):
