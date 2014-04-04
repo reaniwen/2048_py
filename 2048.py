@@ -14,15 +14,21 @@ def judge_dir(drt):
 	#	move sec ptr to the first value positon
 	#	move value to space, space+1
 	#	sec move to the next value position
-	if drt == "w":
-		for col in range (4):
-			for row in range(4):
-				space = 0
+	if drt == 'w':
+		for col in range(4):
+			space = 0
+			for space in range(4):
+				if Board[space][col] == 0:
+					break #init space
+			row = space
+			while row != 4:#for row in range(4):
 				if Board[row][col]!=0:
 					Board[space][col] = Board[row][col]
 					if space != row:
 						Board[row][col] = 0
-						space += 1
+					space += 1
+				row += 1
+				
 	elif drt == 's':
 		for col in range(4):
 			for row in range(3,-1,-1):
