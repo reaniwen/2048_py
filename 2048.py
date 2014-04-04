@@ -17,47 +17,59 @@ def judge_dir(drt):
 	if drt == 'w':
 		for col in range(4):
 			space = 0
-			for space in range(4):
-				if Board[space][col] == 0:
-					break #init space
+			while space != 3 and Board[space][col] !=0:
+				space += 1 #init space
 			row = space
-			while row != 4:#for row in range(4):
+			while row != 4:
 				if Board[row][col]!=0:
 					Board[space][col] = Board[row][col]
 					if space != row:
 						Board[row][col] = 0
 					space += 1
 				row += 1
-				
+
 	elif drt == 's':
 		for col in range(4):
-			for row in range(3,-1,-1):
-				#row = 3-neg_row
-				space = 3
+			space = 3
+			while space != 0 and Board[space][col] != 0:
+				space -= 1
+			row = space
+			while row != -1:
 				if Board[row][col]!=0:
 					Board[space][col] = Board[row][col]
 					if space != row:
 						Board[row][col] = 0
-						space -= 1
-	elif drt == "a":
+					space -= 1
+				row -= 1
+
+	elif drt == 'a':
 		for row in range (4):
-			for col in range(4):
-				space = 0
-				if Board[row][col]!= 0:
+			space = 0
+			while space != 3 and Board[row][space] !=0:
+				space +=1 #init space
+			col = space
+			while col != 4:
+				if Board[row][col]!=0:
 					Board[row][space] = Board[row][col]
-					if space !=	col:
+					if space != col:
 						Board[row][col] = 0
-						space += 1
+					space += 1
+				col += 1
+
 	elif drt == 'd':
-		for row in range (4):
-			for col in range(3,-1,-1):
-				#col = 3-neg_col
-				space = 3
-				if Board[row][col]!= 0:
+		for row in range(4):
+			space = 3
+			while space != 0 and Board[row][space] !=0:
+				space +=1
+			col = space
+			while col != -1:
+				if Board[row][col] !=0:
 					Board[row][space] = Board[row][col]
-					if space!= col:
+					if space !=col:
 						Board[row][col] = 0
-						space -= 1
+					space -=1
+				col -=1
+
 
 #def utod(oneLine):
 #	i,j=0,1
