@@ -71,12 +71,10 @@ def judge_dir(drt):
 				col -=1
 
 
-#def utod(oneLine):
-#	i,j=0,1
-#	while j!=4:
-#		oneLine[]
+def chkwin(): #check whether we win
 
-#def dtou():
+def chkmove():
+
 					
 
 print_board(Board)
